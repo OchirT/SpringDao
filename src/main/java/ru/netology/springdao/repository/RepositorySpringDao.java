@@ -26,7 +26,7 @@ public class RepositorySpringDao {
     public List<String> getProductName(String customerName) {
 
         return namedParameterJdbcTemplate.query(param, new MapSqlParameterSource()
-                        .addValue("name", customerName),
+                        .addValue("customerName", customerName),
                 (rs, rowNum) -> rs.getString("product_name"));
     }
 
